@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penetration Testing Application</title>
+</head>
+<body>
+    <h1>Penetration Testing Application</h1>
+
+    <!-- SQL Injection Testing Form -->
+    <h2>SQL Injection Testing</h2>
+    <form action="/test_sql_injection" method="POST">
+        <label for="sql_url">Enter URL for SQL Injection Test:</label>
+        <input type="text" id="sql_url" name="url" required>
+        <button type="submit">Test SQL Injection</button>
+    </form>
+
+    <hr>
+
+    <!-- Port Scanning Form -->
+    <h2>Port Scanning</h2>
+    <form action="/scan_ports" method="POST">
+        <label for="target_ip">Enter Target IP:</label>
+        <input type="text" id="target_ip" name="target_ip" required>
+        <label for="port_range">Port Range:</label>
+        <input type="text" id="port_range" name="port_range" placeholder="e.g. 20-80" required>
+        <button type="submit">Scan Ports</button>
+    </form>
+
+    <hr>
+
+    <!-- SSH Brute Force Attack Form -->
+    <h2>SSH Brute Force Attack</h2>
+    <form action="/ssh_brute_force" method="POST">
+        <label for="ssh_ip">Enter Target IP:</label>
+        <input type="text" id="ssh_ip" name="target_ip" required>
+        <label for="username">Enter Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password_list">Enter Password List (comma separated):</label>
+        <input type="text" id="password_list" name="password_list" required>
+        <button type="submit">Start SSH Brute Force Attack</button>
+    </form>
+
+    <hr>
+
+    <!-- Denial of Service (DoS) Attack Form -->
+    <h2>Denial of Service (DoS) Attack</h2>
+    <form action="/dos_attack" method="POST">
+        <label for="dos_url">Enter Target URL:</label>
+        <input type="text" id="dos_url" name="target_url" required>
+        <label for="threads_count">Number of Threads:</label>
+        <input type="number" id="threads_count" name="threads_count" min="1" value="5" required>
+        <label for="request_limit">Number of Requests Per Thread:</label>
+        <input type="number" id="request_limit" name="request_limit" min="1" value="100" required>
+        <button type="submit">Start DoS Attack</button>
+    </form>
+
+    <hr>
+
+    <!-- XSS Testing Form -->
+    <h2>Cross-Site Scripting (XSS) Testing</h2>
+    <form action="/test_xss" method="POST">
+        <label for="xss_url">Enter URL for XSS Test:</label>
+        <input type="text" id="xss_url" name="url" required>
+        <button type="submit">Test XSS</button>
+    </form>
+
+    <hr>
+
+    <!-- Report Generation Form -->
+    <h2>Generate Penetration Test Report</h2>
+    <form action="/generate_report" method="POST">
+        <label for="sql_injection_results">SQL Injection Results:</label>
+        <textarea id="sql_injection_results" name="sql_injection_results" rows="4" required></textarea>
+        <label for="port_scanning_results">Port Scanning Results:</label>
+        <textarea id="port_scanning_results" name="port_scanning_results" rows="4" required></textarea>
+        <label for="xss_results">XSS Results:</label>
+        <textarea id="xss_results" name="xss_results" rows="4" required></textarea>
+        <button type="submit">Generate Report</button>
+    </form>
+
+    <hr>
+
+</body>
+</html>
